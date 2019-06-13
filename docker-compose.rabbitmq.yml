@@ -1,0 +1,17 @@
+version: "2.2"
+services:
+
+  rabbitmq:
+    image: rabbitmq:3.7.15-management-alpine
+    container_name: metricbeat-rabbitmq
+    environment:
+      TCP_PORTS: "5672,15672"
+    ports:
+      - "127.0.0.1:1234:15672"
+    networks:
+      - rabbitmq
+
+networks:
+  rabbitmq:
+    external:
+      name: elk-lab
