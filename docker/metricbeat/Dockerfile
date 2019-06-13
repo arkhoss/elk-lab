@@ -8,6 +8,8 @@ COPY ${METRICBEAT_FILE} /usr/share/metricbeat/metricbeat.yml
 USER root
 
 RUN yum -y install nc
+RUN yum -y install epel-release
+RUN yum -y install jq
 
 RUN mkdir /var/log/metricbeat \
     && chown metricbeat /usr/share/metricbeat/metricbeat.yml \

@@ -50,7 +50,13 @@ vagrant ssh orch
 git clone git@github.com:arkhoss/elk-lab.git && cd elk-lab
 ```
 
+Set Some permissions
+```bash
+chmod +755 scripts/*
+```
+
 This steps needs sudo/root, and build
+
 ```bash
 $ sudo make setup
 => ACLs on /var/run/docker.sock OK
