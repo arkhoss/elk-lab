@@ -59,7 +59,7 @@ services:
       context: ./docker/metricbeat
       args:
         - METRICBEAT_FILE=metricbeat-host.yml
-    container_name: metricbeat-metricbeat-host
+    container_name: elk-lab-metricbeat-host
     command: -system.hostfs=/hostfs
     volumes:
       - /proc:/hostfs/proc:ro
