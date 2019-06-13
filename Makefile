@@ -47,42 +47,42 @@ build:
 	@docker-compose build
 	
 # =================================================== MYSQL ============================================================
-compose-mysql=docker-compose -f docker-compose.mysql.yml -p metricbeat_mysql
+compose-mysql=docker-compose -f docker-compose.mysql.yml -p elk-lab_mysql
 start-mysql:
 	@$(compose-mysql) up -d mysql
 stop-mysql:
 	@$(compose-mysql) stop mysql
 
 # =================================================== MONGOSB ==========================================================
-compose-mongodb=docker-compose -f docker-compose.mongodb.yml -p metricbeat_mongodb
+compose-mongodb=docker-compose -f docker-compose.mongodb.yml -p elk-lab_mongodb
 start-mongodb:
 	@$(compose-mongodb) up -d mongodb
 stop-mongodb:
 	@$(compose-mongodb) stop mongodb
 
 # =================================================== RABBITMQ =========================================================
-compose-rabbitmq=docker-compose -f docker-compose.rabbitmq.yml -p metricbeat_rabbitmq
+compose-rabbitmq=docker-compose -f docker-compose.rabbitmq.yml -p elk-lab_rabbitmq
 start-rabbitmq:
 	@$(compose-rabbitmq) up -d rabbitmq
 stop-rabbitmq:
 	@$(compose-rabbitmq) stop rabbitmq
 
 # =================================================== REDIS ============================================================
-compose-redis=docker-compose -f docker-compose.redis.yml -p metricbeat_redis
+compose-redis=docker-compose -f docker-compose.redis.yml -p elk-lab_redis
 start-redis:
 	@$(compose-redis) up -d redis
 stop-redis:
 	@$(compose-redis) stop redis
 
 # =================================================== NGINX ============================================================
-compose-nginx=docker-compose -f docker-compose.nginx.yml -p metricbeat_nginx
+compose-nginx=docker-compose -f docker-compose.nginx.yml -p elk-lab_nginx
 start-nginx:
 	@$(compose-nginx) up -d nginx
 stop-nginx:
 	@$(compose-nginx) stop nginx
 
 # =================================================== APACHE ===========================================================
-compose-apache=docker-compose -f docker-compose.apache.yml -p metricbeat_apache
+compose-apache=docker-compose -f docker-compose.apache.yml -p elk-lab_apache
 start-apache:
 	@$(compose-apache) up -d apache
 stop-apache:

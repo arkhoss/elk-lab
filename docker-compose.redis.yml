@@ -3,7 +3,7 @@ services:
 
   redis:
     image: redis:4.0.14-alpine
-    container_name: metricbeat-redis
+    container_name: elk-lab-redis
     networks:
       - redis
 

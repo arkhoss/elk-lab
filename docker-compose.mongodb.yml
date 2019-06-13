@@ -3,7 +3,7 @@ services:
 
   mongodb:
     image: mongo:3.5.18-jessie
-    container_name: metricbeat-mongodb
+    container_name: elk-lab-mongodb
     networks:
       - mongodb
 

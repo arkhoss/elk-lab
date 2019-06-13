@@ -76,6 +76,6 @@ services:
     network_mode: host # Mandatory to monitor HOST filesystem, memory, processes,...
 
 networks:
-  metricbeat:
+  elk-lab:
     external:
       name: elk-lab

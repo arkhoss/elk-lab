@@ -3,7 +3,7 @@
 cat /vagrant/control.pub >> /home/vagrant/.ssh/authorized_keys
 
 # tools
-sudo yum install -y yum-utils device-mapper-persistent-data lvm2  net-tools nano
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2  net-tools nano git
 
 # install docker steps
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo

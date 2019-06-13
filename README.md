@@ -48,4 +48,8 @@ Get inside orchestration host and clone the repo
 ```bash
 vagrant ssh orch
 git clone git@github.com:arkhoss/elk-lab.git && cd elk-lab
+
+$ make setup
+
+
 ```

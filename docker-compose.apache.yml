@@ -3,7 +3,7 @@ services:
 
   apache:
     image: httpd:2.4.39-alpine
-    container_name: metricbeat-apache
+    container_name: elk-lab-apache
     volumes:
       - ./config/usr/local/apache2/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf
     networks:
