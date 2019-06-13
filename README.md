@@ -5,6 +5,9 @@ Docker and ELK configuration examples.
 Learn how to use docker and ELK to monitor apps and hosts, nodes, containers and services.
 
 **Warning**
+> THIS IS A WORK IN PROGESS! 
+
+**Warning**
 > This project is built for example and testing. 
 > DO NOT use any part of it in production unless you know exactly what you are doing.
 
