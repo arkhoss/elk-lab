@@ -12,6 +12,7 @@ services:
       - IPC_LOCK
     environment:
       - cluster.name=docker-cluster
+      - node.name=elasticsearch-1
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
     ulimits:
