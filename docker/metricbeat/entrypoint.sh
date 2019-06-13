@@ -24,7 +24,7 @@ wait_all_hosts() {
 
 wait_all_hosts
 
-while ! [ curl -s -X GET ${HOST_ELASTICSEARCH}/_cluster/health\?wait_for_status\=yellow\&timeout\=60s | grep -q '"status":"yellow"' ] || [ curl -s -X GET ${HOST_ELASTICSEARCH}/_cluster/health\?wait_for_status\=green\&timeout\=60s | grep -q '"status":"green"' ]
+while ! curl -s -X GET http://10.0.0.101:9222/_cluster/health | jq . | grep -i "green\|yellow"
 do
     echo "==> Waiting for cluster YELLOW or GREEN status" && sleep 1
 done
