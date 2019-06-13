@@ -11,3 +11,5 @@ docker network create elk-lab || true
 
 ## Building Metricbeat custom images
 docker-compose build
+
+#end
