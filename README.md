@@ -152,9 +152,71 @@ metricbeat-host:
 Start monitoring your host.
 
 ```bash
-$ make start-monitoring-host
+$ sudo make start-monitoring-host
 Creating elk-lab-elasticsearch ... done
 elk-lab-elasticsearch is up-to-date
 Creating elk-lab-kibana ... done
 Creating elk-lab-metricbeat-host ... done
 ```
+
+
+* You can check everything is OK, and you should have 3 containers running...
+* Be careful Elasticsearch and Kibana ports are exposed on 0.0.0.0 network (every IP address).
+* Default Metricbeat dashboard are automatically loaded into Kibana (`setup.dashboards.enabled: true`)
+
+```bash
+$ docker ps
+CONTAINER ID        IMAGE                                                 COMMAND                  CREATED             STATUS              PORTS                              NAMES
+794ba517305b        elk-lab_metricbeat-host                               "/usr/local/bin/cust…"   9 minutes ago       Up About a minute                                      elk-lab-metricbeat-host
+81d0953ae081        docker.elastic.co/kibana/kibana:7.1.1                 "/usr/local/bin/kiba…"   9 minutes ago       Up 9 minutes        0.0.0.0:5666->5601/tcp             elk-lab-kibana
+9f1e1807a964        docker.elastic.co/elasticsearch/elasticsearch:7.1.1   "/usr/local/bin/dock…"   17 minutes ago      Up 17 minutes       9300/tcp, 0.0.0.0:9222->9200/tcp   elk-lab-elasticsearch
+```
+
+If everything is fine, you should be able to access Kibana, and Monitoring dashboard:
+
+* Kibana => [http://127.0.0.1:5666](http://127.0.0.1:5666/app/kibana)
+* Dashboard list => [http://127.0.0.1:5666/app/kibana#/dashboards?_g=()](http://127.0.0.1:5666/app/kibana#/dashboards?_g=())
+* System Overview => [http://127.0.0.1:5666/app/kibana#/dashboard/Metricbeat-system-overview?_g=()](http://127.0.0.1:5666/app/kibana#/dashboard/Metricbeat-system-overview?_g=())
+
+
+## Clean everything
+
+A simple command to remove all containers related to elk-lab
+
+```bash
+$ sudo make clean
+f6eb90059307
+9c262009fff8
+8fc813f53c3d
+All elk-lab containers removed !
+```
+
+## Restart everything
+
+```bash
+$ make install
+```
+
+## LICENSE
+
+MIT License
+
+Copyright (c) 2019 David Caballero
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
