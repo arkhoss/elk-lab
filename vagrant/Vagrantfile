@@ -3,6 +3,10 @@
 
 # README
 #
+# Usage: vagrant up
+# Author: David Caballero <d@dcaballero.net>
+# Version: 1.0
+#
 # Getting Started:
 # 1. vagrant plugin install vagrant-hostmanager
 # 2. vagrant up

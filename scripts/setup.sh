@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Usage: setup.sh
+# Author: David Caballero <d@dcaballero.net>
+# Version: 1.0
 
 ## Needed for metricbeat
 sudo setfacl -m u:1000:rw /var/run/docker.sock && echo "=> ACLs on /var/run/docker.sock OK"

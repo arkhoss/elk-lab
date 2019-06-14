@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Usage: clean.sh
+# Author: David Caballero <d@dcaballero.net>
+# Version: 1.0
 
 ## Remove all containers related to metricbeat
 CONTAINERS=`docker ps -a | grep elk-lab | awk '{print $1}'`

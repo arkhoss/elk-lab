@@ -1,4 +1,7 @@
 #!/bin/bash
+# Usage: docker-install-script.sh
+# Author: David Caballero <d@dcaballero.net>
+# Version: 1.0
 
 cat /vagrant/control.pub >> /home/vagrant/.ssh/authorized_keys
 
