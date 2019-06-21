@@ -26,7 +26,7 @@ wait_all_hosts
 
 while ! curl -s -X GET http://10.0.0.101:9222/_cluster/health | jq . | grep -i "green\|yellow"
 do
-    echo "==> Waiting for cluster YELLOW or GREEN status" && sleep 1
+    echo "==> Waiting for cluster YELLOW or GREEN status" && sleep 1m
 done
 
 echo ""

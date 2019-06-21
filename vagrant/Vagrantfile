@@ -27,10 +27,4 @@ Vagrant.configure(2) do |config|
       vb.memory = "3072"
     end
   end
-
-  config.vm.define "app1" do |h|
-    h.vm.network "private_network", ip: "10.0.0.102"
-    h.vm.hostname = "app1"
-    h.vm.provision :shell, path: "docker-install-script.sh"
-  end
 end
